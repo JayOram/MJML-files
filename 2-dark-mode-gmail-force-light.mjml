@@ -1,0 +1,75 @@
+<mjml lang="en" support-dark-mode="true" gmail-force-light-mode="true">
+  <mj-head>
+    <mj-title>Test 2: dark mode + Gmail force light</mj-title>
+    <mj-preview>Dark mode CSS, Gmail apps forced light</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif" />
+      <mj-text font-size="16px" line-height="24px" color="#222222" color--dark="#f2f2f2" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f4f4f4" background-color--dark="#000000">
+
+    <!-- Test identifier -->
+    <mj-section background-color="#ffffff" background-color--dark="#1e1e1e" padding="24px 0 8px">
+      <mj-column>
+        <mj-text font-size="22px" line-height="28px" font-weight="bold">Test 2: dark mode + Gmail force light</mj-text>
+        <mj-text font-size="14px" line-height="20px">
+          Root attributes: <code>support-dark-mode="true"<br />gmail-force-light-mode="true"</code><br />
+          color-scheme meta: <code>light only</code><br />
+          :root CSS + --dark styles: <code>yes</code>
+        </mj-text>
+        <mj-text font-size="14px" line-height="20px" font-weight="bold">Expected: Gmail apps stay light; other clients that support it show GREEN dark styles.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Indicator: changes colour only when --dark CSS is applied -->
+    <mj-section background-color="#ffffff" background-color--dark="#1e1e1e" padding="8px 0">
+      <mj-column>
+        <mj-text align="center" font-weight="bold" color="#5c4400" color--dark="#c8f7c5" container-background-color="#ffe08a" container-background-color--dark="#1b5e20" padding="16px 25px">
+          AMBER = light styles / no --dark CSS<br />
+          GREEN = --dark CSS is being applied
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Content with --dark overrides -->
+    <mj-section background-color="#ffffff" background-color--dark="#1e1e1e" padding="8px 0">
+      <mj-column>
+        <mj-text font-size="18px" font-weight="bold">Section with --dark overrides</mj-text>
+        <mj-text>
+          Background: #ffffff / dark #1e1e1e. Text: #222222 / dark #f2f2f2.
+          Compare how this block renders against the one below.
+        </mj-text>
+        <mj-button href="https://mjml.io" background-color="#0055cc" background-color--dark="#66a3ff" color="#ffffff" color--dark="#000000" border-radius="4px">
+          Button (blue / dark light-blue)
+        </mj-button>
+        <mj-divider border-color="#dddddd" border-color--dark="#444444" border-width="1px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Content with NO --dark overrides, to show client inversion -->
+    <mj-section background-color="#ffffff" padding="8px 0">
+      <mj-column>
+        <mj-text font-size="18px" font-weight="bold" color="#000000">Section without --dark overrides</mj-text>
+        <mj-text color="#000000">
+          Background: #ffffff, text: #000000, no dark styles. If this inverts, the
+          client is applying its own dark mode.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Brand colour swatches with no overrides -->
+    <mj-section background-color="#ffffff" padding="8px 0 24px">
+      <mj-column width="33.33%">
+        <mj-text align="center" color="#ffffff" container-background-color="#d62828" padding="16px 10px">#d62828</mj-text>
+      </mj-column>
+      <mj-column width="33.33%">
+        <mj-text align="center" color="#000000" container-background-color="#f7f7f7" padding="16px 10px">#f7f7f7</mj-text>
+      </mj-column>
+      <mj-column width="33.33%">
+        <mj-text align="center" color="#ffffff" container-background-color="#111111" padding="16px 10px">#111111</mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
